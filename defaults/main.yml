@@ -1,0 +1,16 @@
+---
+dockerhub_version: 17.0.1
+dockerhub_base: ansible
+
+awx_image: "awx"
+
+redis_version: 6.0.10
+redis_image: "{{ docker_registry }}/redis:{{ redis_version }}"
+
+postgresql_version: "12"
+postgresql_image: "{{ docker_registry }}/postgres:{{postgresql_version}}"
+
+compose_start_containers: true
+upgrade_postgres: false
+
+create_preload_data: false
