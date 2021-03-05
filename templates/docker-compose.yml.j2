@@ -61,10 +61,9 @@ services:
     {% elif awx_alternate_dns_servers is defined %}
     dns: "{{ awx_alternate_dns_servers }}"
     {% endif %}
-    {% if (docker_compose_extra_hosts is defined) and (':' in docker_compose_extra_hosts) %}
-    {% set docker_compose_extra_hosts_list = docker_compose_extra_hosts.split(',') %}
+    {% if docker_compose_extra_hosts is defined %}
     extra_hosts:
-    {% for docker_compose_extra_host in docker_compose_extra_hosts_list %}
+    {% for docker_compose_extra_host in docker_compose_extra_hosts %}
       - "{{ docker_compose_extra_host }}"
     {% endfor %}
     {% endif %}
@@ -131,10 +130,9 @@ services:
     {% elif awx_alternate_dns_servers is defined %}
     dns: "{{ awx_alternate_dns_servers }}"
     {% endif %}
-    {% if (docker_compose_extra_hosts is defined) and (':' in docker_compose_extra_hosts) %}
-    {% set docker_compose_extra_hosts_list = docker_compose_extra_hosts.split(',') %}
+    {% if docker_compose_extra_hosts is defined %}
     extra_hosts:
-    {% for docker_compose_extra_host in docker_compose_extra_hosts_list %}
+    {% for docker_compose_extra_host in docker_compose_extra_hosts %}
       - "{{ docker_compose_extra_host }}"
     {% endfor %}
     {% endif %}
